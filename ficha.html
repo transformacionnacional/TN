@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagenes/LOGO.jpg">
+    <title>Ficha de Afiliación - Partido de Transformación Nacional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-transform: uppercase;
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0,123,255,0.5);
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
+
+        /* Media Queries para Responsividad */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px; /* Reduce el padding en pantallas pequeñas */
+                margin-top: 30px; /* Ajusta el margen superior */
+                margin-bottom: 30px; /* Ajusta el margen inferior */
+                box-shadow: none; /* Elimina la sombra para un diseño más limpio en móviles */
+                border-radius: 5px; /* Reduce el borde redondeado */
+                width: calc(100% - 40px); /* Asegura que el contenedor use casi todo el ancho */
+                box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+            }
+
+            h1 {
+                font-size: 24px; /* Ajusta el tamaño del título en móviles */
+                margin-bottom: 15px; /* Reduce el margen inferior del título */
+            }
+
+            label {
+                font-size: 14px; /* Ajusta el tamaño de los labels */
+            }
+
+            input, select, textarea {
+                font-size: 14px; /* Ajusta el tamaño de la fuente en campos de entrada */
+                padding: 10px; /* Reduce el padding en campos de entrada */
+                margin-top: 4px; /* Reduce el margen superior en campos de entrada */
+                border-radius: 4px; /* Reduce el borde redondeado en campos de entrada */
+                width: calc(100% - 20px); /* Ajusta el ancho para incluir margen interno */
+                box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+            }
+
+            button {
+                font-size: 16px; /* Ajusta el tamaño del texto del botón */
+                padding: 10px; /* Reduce el padding del botón */
+                margin-top: 15px; /* Ajusta el margen superior del botón */
+                width:auto; /* Permite que el botón se ajuste al contenido en móviles */
+                display:block; /* Asegura que cada botón esté en su propia línea */
+                margin-left:auto; 
+                margin-right:auto; 
+             }
+
+             .footer {
+                 font-size:12 px; /* Ajusta el tamaño del pie de página en móviles */
+             }
+         }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ficha de Afiliación</h1>
+    <form id="afiliacionForm" action="procesar_afiliacion.php" method="POST">
+        <!-- Datos Personales -->
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <div class="error-message" id="nombreError"></div>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+        <div class="error-message" id="fechaError"></div>
+
+        <label for="direccion">Dirección:</label>
+        <textarea id="direccion" name="direccion" rows="3" required></textarea>
+        <div class="error-message" id="direccionError"></div>
+
+        <!-- Información de Contacto -->
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="+51-XXX-XXX-XXX" required pattern="\+51-\d{3}-\d{3}-\d{3}">
+        <div class="error-message" id="telefonoError"></div>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <div class="error-message" id="emailError"></div>
+
+        <!-- Información Política -->
+        <label for="ocupacion">Ocupación:</label>
+        <input type="text" id="ocupacion" name="ocupacion">
+
+        <label for="intereses">Áreas de Interés:</label>
+        <select id="intereses" name="intereses[]" multiple required>
+            <option value="">Seleccione...</option>
+            <option value="educacion">Educación</option>
+            <option value="salud">Salud</option>
+            <option value="medio_ambiente">Medio Ambiente</option>
+            <option value="economia">Economía</option>
+        </select>
+        
+        <!-- Declaración -->
+        <label for="declaracion">Declaración Personal:</label>
+        <textarea id="declaracion" name="declaracion" rows="5"
+                  placeholder="Escribe por qué deseas unirte al partido..." required></textarea>
+        
+        <!-- Botón de Envío -->
+        <button type="submit"><i class="fas fa-paper-plane"></i> Enviar Solicitud</button>
+    </form>
+    <div class="footer">
+        &copy; 2024 Partido de Transformación Nacional
+    </div>
+</div>
+
+<script>
+    document.getElementById('afiliacionForm').addEventListener('submit', function(event) {
+        let isValid = true;
+
+       // Limpiar mensajes de error
+       document.querySelectorAll('.error-message').forEach(function(el) {
+           el.textContent = '';
+       });
+
+       // Validar nombre
+       const nombre = document.getElementById('nombre').value.trim();
+       if (nombre.length === 0) {
+           document.getElementById('nombreError').textContent = 'El nombre es obligatorio.';
+           isValid = false;
+       }
+
+       // Validar fecha de nacimiento
+       const fechaNacimiento = document.getElementById('fecha_nacimiento').value.trim();
+       if (!fechaNacimiento) {
+           document.getElementById('fechaError').textContent = 'La fecha de nacimiento es obligatoria.';
+           isValid = false;
+       }
+
+       // Validar dirección
+       const direccion = document.getElementById('direccion').value.trim();
+       if (direccion.length === 0) {
+           document.getElementById('direccionError').textContent = 'La dirección es obligatoria.';
+           isValid = false;
+       }
+
+       // Validar teléfono
+       const telefono = document.getElementById('telefono').value.trim();
+       const telefonoPattern = /^\+51-\d{3}-\d{3}-\d{3}$/; // Formato +51-XXX-XXX-XXX
+       if (!telefonoPattern.test(telefono)) {
+           document.getElementById('telefonoError').textContent = 'Formato de teléfono inválido. Use +51-XXX-XXX-XXX';
+           isValid = false;
+       }
+
+       // Validar correo electrónico
+       const email = document.getElementById('email').value.trim();
+       if (!email.includes('@')) {
+           document.getElementById('emailError').textContent = 'El correo electrónico debe ser válido.';
+           isValid = false;
+       }
+
+       if (!isValid) {
+           event.preventDefault(); // Evitar el envío del formulario si hay errores
+       }
+    });
+</script>
+
+</body>
+</html>

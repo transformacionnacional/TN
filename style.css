@@ -1,0 +1,1051 @@
+
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-size: 1em;
+    text-align: center;
+    overflow-x: hidden;
+    
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/*ESTOS ESTILOS PERTENECEN AL ENCABEZADO*/
+.hidden {
+    opacity: 0; /* Clase para ocultar el elemento */
+}
+
+
+header {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0;
+    z-index: 6; 
+    background-color: #015dc000;
+    color: white;
+    padding: 1.25em;
+    display: flex;
+    justify-content: space-between;  
+    width: 98%; 
+    padding-bottom: 5vw;
+    transition: opacity 0.5s ease; 
+   
+}
+header div{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header div h2{
+    text-align: center;
+    
+font-size: 2.5vw;
+
+}
+
+.logo{
+    z-index: 5; 
+    width:10vw; 
+    height:10vw; 
+   
+}
+
+nav {
+    width: 70%;
+  padding-bottom: 0.5em;
+position: relative;
+display: flex;
+justify-content: space-around;
+align-items: center;
+z-index: 7; /* Asegúrate de que sea mayor que otros elementos */
+}
+
+nav .menu-icon {
+    justify-content: center;
+font-size: 4em;
+color: rgb(0, 0, 0);
+cursor: pointer;
+display: none; 
+text-align: left;
+}
+
+nav ul {
+    width: auto; 
+position: static;
+list-style-type: none; 
+padding: 0; 
+margin: 0; 
+display: flex;
+
+}
+
+nav ul li ,.nav .dropdown{
+    width: auto;
+    position: relative;
+    border-radius: 50px;
+display: inline-flex; 
+padding: 0.7vw;
+transition: box-shadow 0.3s ease, transform 0.3s ease;
+margin: 0.1em;
+text-align: center;
+position: relative;
+}
+
+nav a {
+color: rgb(255, 255, 255);
+text-decoration: none;
+font-size: 1.3em;
+position: relative; 
+}
+
+nav li:hover{
+box-shadow: 
+    2px -7px 20px rgb(105, 163, 250), 
+    0 0 0 rgba(219, 219, 219, 0.7),  
+    0 0 0 rgba(0, 4, 255, 0.7);  
+transform: translateY(-1vw);
+
+
+}
+
+.nav .dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 15;
+}
+
+.dropdown-content {
+    display: none;
+    min-width: 120px;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 15;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+ 
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    box-shadow: 
+    2px -7px 20px rgb(105, 163, 250), 
+    0 0 0 rgba(219, 219, 219, 0.7),  
+    0 0 0 rgba(0, 4, 255, 0.7);  
+transform: translateY(-1vw);
+}
+
+.dropdown:hover .dropdown-content {
+    z-index: 15;
+    display: block; /* Muestra el contenido al pasar el mouse */
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        display: none; /* Oculta el menú por defecto */
+    }
+
+    .nav.show {
+        display: block; /* Muestra el menú cuando se activa */
+    }
+
+    .menu-icon {
+        display: block; /* Muestra el icono del menú */
+    }
+
+    .dropdown-content {
+        position: static; /* Cambia la posición en móviles */
+        display: none; /* Oculta el contenido por defecto */
+        padding-left: 20px; /* Espaciado adicional */
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block; /* Muestra el contenido cuando está activo */
+    }
+}
+
+/*ESTOS ESTILOS PERTENECEN AL ENCABEZADO___FRASE__FIGURA__POLITICA*/
+
+.contenedor-encabezado {
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+display: block;
+position: relative; 
+background-image: url('https://cdn01.pucp.education/idehpucp/images/2024/03/imagen_2021-02-01_130648.png');
+background-size: cover; 
+background-position: center; 
+text-align: center;
+overflow: hidden; 
+background-attachment: fixed;
+animation: cambioFondo 8s linear infinite;
+}
+@keyframes cambioFondo {
+    0% {
+        background-image: url('https://www.comexperu.org.pe/upload/images/editorial-200917-040011.jpeg');
+    }
+    20% {
+        background-image: url('https://www.mistertrip.de/hs-fs/hubfs/Bilder/Reiseziele/Peru/peru_poster_istock_1.jpg?width=1920&height=1080&name=peru_poster_istock_1.jpg'); /* Reemplaza con tu URL */
+    }
+    40% {
+        background-image: url('https://i.ytimg.com/vi/W5EbtzFK3jY/maxresdefault.jpg'); /* Reemplaza con tu URL */
+    }
+    80% {
+        background-image: url('https://www.peru.travel/Contenido/General/Imagen/es/244/1.1/carnavales-del-peru-desktop.jpg');
+    }
+}
+
+.contenedor-encabezado::before {
+content: ''; 
+position: absolute; 
+top: 0; 
+left: 0; 
+right: 0; 
+bottom: -100px; 
+background-color: rgba(0, 0, 0, 0.425); 
+z-index: 1; 
+
+}
+
+
+blockquote {
+    margin: auto;
+    font-style: italic;
+    color: white;
+    font-size: 1.2em;
+    position: relative;
+    z-index: 5;
+    width: 50%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+ p{
+
+ text-align: right;
+ }
+    }
+    
+
+
+.contenedor_bienvenida {
+    justify-content: space-around;
+    margin: auto;
+    width: 95%;
+    height: auto;
+    display: flex;
+    position: relative;
+    z-index: 5;
+ margin-top: 20vw;
+    }
+
+
+
+.btn {
+    margin: auto;
+    background-color: #0084ff;
+    color: white;
+    width: 10vw;
+    padding: 0.3em 1.25em;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    position: relative;
+    margin-top: 1em;
+    }
+.btn:hover{
+    background-color: #041dac;
+}
+
+/*ESTOS ESTILOS PERTENECEN AL CUERPO___PROPUESTAS__*/
+
+
+.Propuestas {
+position: relative;
+display: flex; 
+flex-wrap: wrap; 
+justify-content: space-around; 
+}
+#propuestas .btn {
+    background-color: #055cbe;
+    color: white;
+    padding: 0.325em 1.25em;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+ margin: 0em 0 0 5em;
+
+   
+}
+#propuestas h2{
+    font-size: 3vw;
+}
+.propuesta:hover::before {
+background-color: transparent; 
+}
+
+.propuesta:hover h3,
+.propuesta:hover p {
+display: none; 
+}
+
+.propuesta {
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), 0 8px 10px rgba(0, 0, 0, 0.452);
+padding: 2vw;
+font-size: 1.35em;
+position: relative;
+background-size: cover; 
+background-position: center; 
+text-align: center;
+border-radius: 5px;
+height: 15vw;
+width: calc(30% - 1em); 
+margin: 0.9em; 
+box-sizing: border-box; 
+border-radius:1vw;
+
+}
+
+.propuesta:nth-child(1) {
+background-image: url('https://diarioelpueblo.com.pe/wp-content/uploads/2024/01/image-37.png'); 
+}
+
+.propuesta:nth-child(2) {
+background-image: url('https://files.pucp.education/puntoedu/wp-content/uploads/2021/02/26164309/sistema-salud-1-ANDINA-1200x800.jpg'); 
+}
+
+.propuesta:nth-child(3) {
+background-image: url('https://www.horizonteminero.com/wp-content/uploads/2021/07/peru.jpg'); 
+}
+.propuesta:nth-child(4) {
+background-image: url('https://elperuano.pe/fotografia/thumbnail/2022/06/23/000178721M.jpg'); 
+}
+.propuesta:nth-child(5) {
+background-image: url('https://www.ppdperu.org/wp-content/uploads/2020/03/andenes-3-683x1024.jpg'); 
+}
+.propuesta:nth-child(6) {
+background-image: url('https://ddclalibertad.gob.pe/wp-content/uploads/2021/04/Peru-lanzan-Pacto-por-la-Cultura-al-2030-scaled.jpg'); 
+}
+.propuesta:nth-child(7) {
+background-image: url('https://elperuano.pe/fotografia/thumbnail/2023/07/05/000255321M.jpg'); 
+}
+.propuesta:nth-child(8) {
+background-image: url('https://insurgenciamagisterial.com/wp-content/uploads/2023/09/El-Estado-republicano-en-el-Peru-y-los-derechos-humanos.jpg'); 
+}
+
+
+
+.propuesta::before {
+border-radius:1vw;
+content: ''; 
+position: absolute; 
+top: 0; 
+left: 0; 
+right: 0; 
+bottom: 0; 
+background-color: rgba(0, 0, 0, 0.493); 
+z-index: 1; 
+transition: background-color 0.3s ease;
+}
+
+.propuesta h3 {
+color: #ffffff;
+text-align: center;
+margin-bottom: 0.6em;
+z-index: 5;
+position: relative;
+}
+
+.propuesta p {
+position: relative;
+color: #ffffff;
+font-size: 0.8em;
+z-index: 5;
+}
+
+
+/*ESTOS ESTILOS PERTENECEN AL CONTENEDOR_CUERPO_GALERIA DE FOTOS*/
+
+
+.galeria{
+    display: flex;
+    flex-wrap: wrap;
+}
+.galeria h2{
+    font-size: 2vw;
+    padding-top: 6vw;
+}
+.carrusel,.carrusel-2 {
+flex:1;
+position: relative;
+width: 45%;
+height: 100% ;
+margin: auto;
+}
+
+.imagenes,.imagenes-2 {
+margin: auto;
+position: relative;
+width: 40vw;
+height: 45vw;
+overflow: hidden;
+}
+
+.imagenes img,.imagenes-2 img {
+display: none;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: contain;
+transition: opacity 0.5s;
+}
+
+.imagenes img.active,.imagenes-2 img.active {
+opacity: 1;
+display: block;
+}
+
+.imagenes img.no-active, .imagenes-2 img.no-active {
+opacity: 0;
+}
+
+.flechas {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 100%;
+}
+.flecha-izquierda,
+.flecha-derecha {
+
+position: absolute;
+border: none;
+border-radius: 50%; 
+ font-size: 1.8em;
+background-color: rgb(255, 255, 255);
+width: 1.7em; 
+height: 1.7em; 
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.082), 0 8px 10px rgba(0, 0, 0, 0.452);
+
+}
+
+.flecha-izquierda {
+left: 1vw;
+}
+
+.flecha-derecha {
+right: 1vw; 
+}
+
+
+
+
+
+
+.mission-vision{
+display: flex;
+background-image: url('https://www.infobae.com/new-resizer/R1U1sBnDwdrcDIcBkL7sIeTV358=/1200x675/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/O6KFF7JDSRG45AODK553U25INA.png'); 
+padding: 3em 0;
+width: 100%;
+height: 100%;
+text-align: center;
+ position: relative;
+background-size: cover; 
+background-position: center; 
+box-sizing: border-box; 
+background-attachment: fixed;
+
+}
+
+.mission-vision::before {
+content: ''; 
+position: absolute; 
+top: 0; 
+left: 0; 
+right: 0; 
+bottom: 0; 
+background-color: rgba(1, 5, 12, 0.493); 
+z-index: 1; 
+transition: background-color 0.3s ease;
+}
+
+
+
+.container h3{
+border-radius: 12px; 
+padding: 0.2em;
+margin: 0 auto;
+position: relative;
+color: #ffffff; 
+background-color:#0059be; 
+width: 25%;
+z-index: 1;
+font-size: 1.5em;
+}
+
+.container p {
+width: 75%; 
+display: flex;
+position: relative;
+font-size: 0.8em;
+margin: 20px auto; 
+background-color: #ffffff; 
+border: 1px solid #ccc;
+border-radius: 12px; 
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); 
+padding: 1.5em 1em; 
+z-index: 1; 
+line-height: 1.6;
+color: #333; 
+font-family: 'Georgia', serif; 
+position: relative;
+overflow: hidden; 
+}
+
+
+.container p::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0.05));
+z-index: -1; 
+border-radius: 12px; 
+transition: transform 0.3s ease; 
+}
+
+
+.container p:hover::before {
+transform: scale(1.08); 
+}
+
+.container p:hover {
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); 
+transform: translateY(-8px); 
+}
+
+.container p::after {
+content: ''; 
+position: absolute;
+bottom: 10px;
+right: 10px;
+font-size: 2em; 
+color: rgba(0, 123, 255, 0.932); 
+opacity: 0.5;
+pointer-events: none; 
+}
+
+.objetivos,.valores {
+background-color: #022d88;
+padding: 40px 0;
+}
+.valores{
+    background-color: #000000;   
+}
+.valores .objetivo {
+    background-color: #022d88; 
+    color:#ffffff
+}
+
+.valores .objetivo p{
+    font-size: 1vw;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.valores  .objetivo i {
+    background-color: #ffffff;
+    color: #022d88 ;
+}
+.content-objetivos {
+max-width: 100%;
+margin: 0 auto;
+text-align: center;
+}
+
+.content-objetivos h3 {
+font-size: 4em;
+margin-bottom: 20px;
+color:#ffffff;
+text-transform: uppercase ;
+}
+
+.objetivo-container {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+
+}
+.objetivo {
+width: 140px;
+height: 130px;
+border-radius: 50%;
+margin: 20px;
+padding: 2em;
+background-color: #ffffff;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+transition: transform 0.2s ease;
+animation: heartbeat 2s infinite; 
+cursor: pointer; 
+text-align: center; 
+}
+
+@keyframes heartbeat {
+0% {
+    transform: scale(1);	
+}
+10% {
+    transform: scale(1.02);
+}
+20% {
+    transform: scale(1.03);
+}
+100% {
+    transform: scale(1);	
+}						
+}
+.objetivo i {
+background-color: #003aa5;
+padding: 10% 0 0 0;
+width: 55%;
+height: 50%;
+border-radius:50%;
+font-size: 3em;
+color: #ffffff;
+margin-bottom: 10px;
+}
+
+.objetivo p {
+
+margin: auto;
+width: 90%;
+font-size: 0.87em;
+}
+
+.objetivo:hover i {
+transform: translateY(-19px);
+}
+#conferencias{
+    background-color: #003aa5;
+}
+.noticias {
+padding: 20px;
+background-color: #007ccf;
+
+}
+.noticias h2{
+    font-size: 4vw;
+    color:#ffffff;
+}
+.video-list {
+ 
+display: flex;
+flex-wrap: wrap; 
+justify-content: space-between; 
+list-style-type: none; 
+padding: 0; 
+}
+
+.video-list li {
+  
+flex: 1 1 300px; 
+height: auto;
+margin: 2em; 
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.322); 
+background: white; 
+padding: 1vw; 
+border-radius: 5px; 
+transition: 0.3s ease
+}
+
+.video-list li:hover {
+    transform: translateY(-10px) rotateY(5deg); /* Efecto de desplazamiento y rotación */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5); /* Aumentar la sombra al hacer hover */
+}
+.video-iframe {
+width: 97%; 
+height: auto;
+border: none;
+padding-bottom: 1vw;
+}
+.video-list li a{
+
+margin: auto;
+
+    }
+
+.body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    background-color: #000000;
+    padding-top: 1em;
+}
+#Contacto h2 {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+
+    padding: 0.1em;
+    color: #ffffff;
+    letter-spacing: 0.1em;
+}
+
+#Contacto h3{
+    font-size: 1.5em;
+    text-align: center;
+    display: block;
+    color: #c1c1c1;
+}
+.redes-container ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-around;
+   
+}
+
+.redes-container ul li {
+    margin: 2vw;
+}
+
+
+
+.redes-container a {
+    background-color: #e3e3e4;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    font-size: 5em; 
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.redes-container .facebook {
+    color: #3b5998;
+}
+
+.redes-container .facebook:hover {
+    color: #fff;
+    background-color: #3b5998;
+    transform: scale(1.1);
+}
+
+.redes-container .twitter {
+    color: #1da1f2;
+}
+
+.redes-container .twitter:hover {
+    color: #fff;
+    background-color: #1da1f2;
+    transform: scale(1.1);
+}
+
+.redes-container .instagram {
+    color: #e4405f;
+}
+
+.redes-container .instagram:hover {
+    color: #fff;
+    background-color: #e4405f;
+    transform: scale(1.1);
+}
+
+.redes-container .linkedin {
+    color: #0077b5;
+}
+
+.redes-container .linkedin:hover {
+    color: #fff;
+    background-color: #0077b5;
+    transform: scale(1.1);
+}
+
+.redes-container ul li {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/*ESTOS ESTILOS PERTENECEN AL CONTENEDOR_PIE_DE_PAGINA___*/
+
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    font-size: 0.65em;
+    padding:  0.5vw 0vw  ;
+    font-size: 1em;
+    margin-top: 0vw;
+
+
+}
+footer p{
+    margin: 0.9vw;
+
+}
+
+footer a {
+    color: #426eff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.contenedor-pie-pagina {
+    text-align: left;
+    padding-bottom: 0vw;
+background-color: #002a5a; 
+justify-content: space-around;
+}
+
+.pie-de-pagina {
+ 
+    width: 100%;
+    font-size: 1.1em;
+    padding: 1vw;
+   margin-bottom: 0;
+    color: white;
+    justify-content: space-around;
+display: flex;
+
+}
+.pie-de-pagina a{
+color: rgb(66, 176, 255);
+
+}
+.social-icons {
+display: flex; 
+}
+
+.social-icon {
+display: flex; 
+justify-content: center; 
+align-items: center; 
+border: 2px solid #007BFF; 
+border-radius: 50%; 
+width: 1.8em; 
+height: 1.8em; 
+color: #008cff; 
+font-size: 1.5em;
+margin: 0 0.5em; 
+transition: color 0.3s ease; 
+text-decoration: none;
+}
+
+.social-icon:hover {
+color: #ffffff; 
+border: 2px solid #ffffff; 
+}
+
+.social-icon i {
+
+margin: 0;
+vertical-align: middle; 
+}
+
+.redes-container a {
+    font-size: 6vw; 
+ 
+}
+
+.typing-animation {
+   margin: auto;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #ede8ee;
+    animation: typing 3s steps(30) infinite;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 40%;
+    }
+  
+    to {
+      width: 85%;
+    }
+  }
+  
+
+
+@media (max-width: 780px) {
+
+  header{
+    width: 90%; 
+   background-color: #0059be00;
+  }
+  
+  header div{
+    width: 70%;
+    display: flex;
+  }
+    header div h2 {
+        font-size: 1.2em;    
+    }
+
+    .logo {
+        width: 10vw; 
+        height: 10vw; 
+    }
+
+   nav ul{
+    
+    position: absolute;
+    margin-top: 75vw;
+    display: none;
+   
+   }
+   .nav-list{
+    display: flex;
+    flex-direction: column;
+   }
+    nav .menu-icon {
+      color: #ffffff;
+        width: 50%;
+        margin: auto;
+        display: block; 
+    }
+
+    nav ul.show {
+        display: flex; 
+          flex-direction: column;
+    }
+
+    nav ul li {
+        font-size: 0.8em;
+       position: relative; 
+        z-index: 9;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+.contenedor-encabezado{
+    height: 60vh;
+
+}
+    .contenedor_bienvenida {
+        margin: auto;
+        width: 90%;
+        font-size: 0.7em;
+        margin-top: 25vw; 
+    }
+
+    
+
+    .btn {
+        width: 25%; 
+        font-size: 0.77em;   }
+
+
+.propuesta {
+    padding: 5vw;
+    height: auto;
+    width: calc(45% - 1em); 
+
+}
+
+.propuesta h3 {
+   
+    font-size: 0.75em;
+}
+
+.propuesta p {
+   
+    font-size: 0.675em;
+}
+.flecha-izquierda,
+.flecha-derecha {
+
+font-size: 1.5em;
+
+
+}
+.galeria h2{
+    font-size: 1.5em;
+}
+
+.carrusel,.carrusel-2{
+flex-basis: 100%;  
+width: 100%;
+height: auto;
+margin: 1em;
+
+}
+
+
+.imagenes,.imagenes-2{
+width: 70vw;
+height: 75vw;
+}
+footer,.pie-de-pagina{
+font-size: 0.65em;
+}
+.content-mision-vision p{
+font-size: 1.95vw;
+height: 25vw;
+}
+
+.container{
+margin: 3em;
+}
+.container p {
+
+    width: 75%; 
+    font-size: 0.85em; 
+    padding: 2em; 
+}
+
+.mission-vision {
+    display: block;
+    padding: 10px; 
+}
+.noticias h2{
+    font-size: 1.9em;
+}
+#propuestas h2{
+    font-size: 1.8em;
+}
+}
+
+
+
+
+
